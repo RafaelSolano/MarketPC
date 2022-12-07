@@ -11,10 +11,10 @@ function App() {
     <BrowserRouter>
       <Navegacion/>
       <Routes>
-        <Route path ='/'         element = { <ProductosCreados/> }></Route>
-        <Route path ='/producto' element = { <ProductoDetalle/> }></Route>
-        <Route path ='/signin'   element = { <SingIn/> }></Route> 
-        <Route path ='/signup'   element = { <SingUp/> }></Route>
+        <Route path ='/'         element = { <ProductosCreados  /> }></Route>
+        <Route path ='/producto' element = { <ProductoDetalle   /> }></Route>
+        <Route path ='/signin'   element = { <SingIn            /> }></Route> 
+        <Route path ='/signup'   element = { <SingUp            /> }></Route>
       </Routes>
     </BrowserRouter>
   );

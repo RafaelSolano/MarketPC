@@ -9,3 +9,5 @@ export const PRODUCTS_CREATES_GET_ENDPOINT = API +"/productos";
 export const PRODUCT_DEATAIL_GET_ENDPOINT = API +"/productos";
 export const PRODUCT_DELETE_ENDPOINT = API +"/productos";
 export const PRODUCT_UPDATE_PUT_ENDPOINT = API +"/productos";
+
+
