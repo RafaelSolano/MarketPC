@@ -8,6 +8,7 @@ import { EliminarProducto } from "../components/EliminarProducto";
 const ProductoDetalle = () => {
   const [producto, setProducto] = useState([]);
   const {id} = useParams();
+  console.log(id);
   const navegar = useNavigate();
   useEffect(() => {
     axios
@@ -31,7 +32,7 @@ const ProductoDetalle = () => {
             <Card.Img variant="top" src={producto.imagen} />
             <Card.Body>
               <Card.Title>
-                <Link to={`/producto/${producto.idProducto}`}>
+                <Link to={`/producto/${producto.id}`}>
                   {producto.titulo}
                 </Link>
               </Card.Title>
@@ -40,7 +41,7 @@ const ProductoDetalle = () => {
               
             </Card.Body>
             <Card.Footer>
-              <EliminarProducto id={producto.idProducto} titulo ={producto.titulo}/>
+              <EliminarProducto id={producto.id} titulo ={producto.titulo}/>
              </Card.Footer>
           </Card>
         </Col>
