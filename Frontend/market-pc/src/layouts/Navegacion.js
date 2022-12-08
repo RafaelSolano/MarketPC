@@ -19,7 +19,7 @@ function Navegacion() {
             navbarScroll
           >
             <Nav.Link as={NavLink} to={"/ofertas"}>Ofertas</Nav.Link>
-            <Nav.Link as={NavLink} to={"/crearproducto"}>Crear Productos</Nav.Link>
+            <Nav.Link as={NavLink} to={"/crearproductos"}>Crear Productos</Nav.Link>
             <Nav.Link as={NavLink} to={"/carritocompras"}>Carrito de compras</Nav.Link>
             <Nav.Link as={NavLink} to={"/producto"}>productoDetalle</Nav.Link>
             <NavDropdown title="Admin" id="navbarScrollingDropdown">

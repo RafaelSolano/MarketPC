@@ -3,7 +3,6 @@ import { Button } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 import { PRODUCT_DELETE_ENDPOINT } from "../connections/endpoints";
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 
 const EliminarProducto=({id,titulo})=>{
     const navegar = useNavigate()
