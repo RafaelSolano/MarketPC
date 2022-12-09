@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { PRODUCT_DEATAIL_GET_ENDPOINT } from "../connections/endpoints";
-import { Card, Col, Container, Row } from "react-bootstrap";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Card, Col, Container,  Row } from "react-bootstrap";
+import { Link,  useNavigate, useParams } from "react-router-dom";
 import { EliminarProducto } from "../components/EliminarProducto";
+import { EditarProducto } from "../components/EditarProducto";
 
 const ProductoDetalle = () => {
   const [producto, setProducto] = useState([]);
   const {id} = useParams();
-  console.log(id);
   const navegar = useNavigate();
   useEffect(() => {
     axios
@@ -41,8 +41,9 @@ const ProductoDetalle = () => {
               
             </Card.Body>
             <Card.Footer>
-              <EliminarProducto id={producto.id} titulo ={producto.titulo}/>
-             </Card.Footer>
+              <EliminarProducto id={producto.id} titulo ={producto.titulo} />
+              <EditarProducto producto={producto} ></EditarProducto>
+            </Card.Footer>
           </Card>
         </Col>
       </Row>
