@@ -27,19 +27,19 @@ const EliminarProducto=({id,titulo})=>{
           })
           
           swalWithBootstrapButtons.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Desea eliminar este producto?',
+            text: "se eliminara para siempre!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, cancel!',
+            confirmButtonText: 'Si, eliminar esto!',
+            cancelButtonText: 'No, cancelar!',
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
                 eliminar()
               swalWithBootstrapButtons.fire(
-                'Deleted!',
-                'Your file has been deleted.',
+                'Eliminado!',
+                'El producto fue eliminado ',
                 'success'
               )
             } else if (
@@ -58,9 +58,10 @@ const EliminarProducto=({id,titulo})=>{
     
     
     return(
-        <Button 
+        <Button className="m-1"
             variant="danger"
             size="sm"
+            
             onClick={crearAlerta} 
             >Eliminar</Button>
     )

@@ -8,8 +8,8 @@ import {NavLink} from "react-router-dom";
 
 function Navegacion() {
   return (
-    <Navbar bg="light" expand="lg">
-      <Container fluid>
+    <Navbar  className="bg-light" expand="lg">
+      <Container >
         <Navbar.Brand as={NavLink} to={"/"}>Market Pc</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

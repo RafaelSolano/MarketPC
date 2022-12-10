@@ -2,8 +2,9 @@ import { Button, Form } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import { PRODUCT_UPDATE_PUT_ENDPOINT } from "../connections/endpoints";
-import { useNavigate, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Swal from "sweetalert2";
 //import ProductoFormularioEditar from "./ProductoFormularioEditar";
 //import ProductoFormularioEditar from "./ProductoFormularioEditar";
 
@@ -21,7 +22,7 @@ const EditarProducto = ({ producto }) => {
   const [descripcion, setDescripcion] = useState("");
 
   //navigate
-  //const navegar = useNavigate()
+  const navegar = useNavigate()
 
   const enviarFormulario = (e) => {
     e.preventDefault()({ titulo, imagen, precio, categoria, descripcion });
@@ -30,7 +31,7 @@ const EditarProducto = ({ producto }) => {
   ///Editar
 
   function editar() {
-    handleClose();
+    //handleClose();
     const data = {
       id: producto.id,
       titulo: titulo,
@@ -44,8 +45,16 @@ const EditarProducto = ({ producto }) => {
     axios
       .put(`${PRODUCT_UPDATE_PUT_ENDPOINT}`, data)
       .then((data) => {
+
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'El producto fue Editado',
+          showConfirmButton: false,
+          timer: 1500
+        })
         console.log(data);
-        //navegar("/")
+       // navegar("/")
       })
       .catch((err) => {
         console.error(err);
@@ -57,7 +66,7 @@ const EditarProducto = ({ producto }) => {
   };
   return (
     <>
-      <Button variant="primary" onClick={crearModal}>
+      <Button variant="primary" size="sm" onClick={crearModal}>
         Editar
       </Button>
 
@@ -117,8 +126,9 @@ const EditarProducto = ({ producto }) => {
               />
             </Form.Group>
             <Button variant="primary" type="submit">
-              {" "}
-              Crear producto
+              
+              
+              Guardar Cambios
             </Button>
           </Form>
         </Modal.Body>

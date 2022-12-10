@@ -43,7 +43,7 @@ function ProductoFormularioEditar({callback},producto){
                 <Form.Label>Descripcion</Form.Label>
                 <Form.Control  type="text"  required defaultValue={producto.descripcion} onChange={e=>setDescripcion(e.target.value)}/>
             </Form.Group>
-                <Button  variant ="primary" type="submit" > Crear producto</Button>          
+                <Button  variant ="primary" type="submit" > Guardar</Button>          
 
         </Form>
     )
